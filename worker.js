@@ -15,7 +15,7 @@ async function handleRequest(request) {
 }
 
 async function fetchData() {
-  const response = await fetch(https://raw.githubusercontent.com/weiiiiiu/some-stars/main/data.json')
+  const response = await fetch('https://raw.githubusercontent.com/weiiiiiu/some-stars/main/data.json')
   return response
 }
 
