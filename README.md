@@ -2,7 +2,7 @@
 
 # Some Stars
 
-⭐ <a href="https://yz0812.github.io/"  target="_blank">wei</a>的star列表，每周自动更新 ⭐
+⭐ wei的star列表，每周自动更新 ⭐
 
 </div><br>
 
