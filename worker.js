@@ -1,4 +1,4 @@
-addEventListener('fetch', event => {
+ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
@@ -149,7 +149,7 @@ const html = `
       <h1 id="github-star-导航" class="text-2xl font-bold">
         <a href="/" class="hidden md:block">Github Star 导航</a>
       </h1>
-      <input id="search" type="text" placeholder="搜索..." class="border rounded px-2 py-1" />
+      <input id="search" type="text" placeholder="搜索..." class="border rounded-lg px-4 py-2 w-64 text-lg" />
     </header>
     <div class="container mx-auto p-4 py-16">
       <div id="sidebar">
@@ -171,22 +171,33 @@ const html = `
         const repoCardsHtml = (repos) => {
           return repos
             .map((repo) => {
-              const truncatedDescription = repo.description && repo.description.length > 200 ? repo.description.slice(0, 200) + "..." : repo.description;
+              const truncatedDescription = repo.description && repo.description.length > 100 
+                ? repo.description.slice(0, 100) + "..." 
+                : repo.description;
               return \`
-          <div class="repo-card max-w-sm rounded-2xl overflow-hidden shadow-lg m-4 bg-white transition-transform transform hover:scale-105">
-            <div class="h-48 overflow-hidden flex items-center justify-center mt-4 rounded-t-2xl">
-              <img class="object-contain h-full w-full rounded-t-2xl" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}">
-            </div>
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
-                <a href="\${repo.html_url}" class="text-blue-500">\${repo.full_name}</a>
-              </div>
-              <p class="text-gray-700 text-base">\${truncatedDescription}</p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-              <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Stars: \${repo.stargazers_count}</span>
-            </div>
-          </div>\`;
+                <div class="repo-card w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                  <div class="h-48 overflow-hidden flex items-center justify-center p-4">
+                    <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
+                  </div>
+                  <div class="p-4 flex-grow flex flex-col">
+                    <div class="mb-4">
+                      <h3 class="text-xl font-bold text-blue-600 truncate">
+                        \${repo.name}
+                      </h3>
+                      <p class="text-sm text-gray-600 truncate mb-2">
+                        \${repo.owner.login}
+                      </p>
+                      <p class="text-gray-700 line-clamp-3">
+                        \${truncatedDescription}
+                      </p>
+                    </div>
+                    <div class="mt-auto">
+                      <span class="inline-block bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
+                        Stars: \${repo.stargazers_count}
+                      </span>
+                    </div>
+                  </div>
+                </div>\`;
             })
             .join("");
         };
@@ -223,23 +234,34 @@ const html = `
 
         function repoCardsHtml(repos) {
           return repos
-            .map(function (repo) {
-              const truncatedDescription = repo.description && repo.description.length > 200 ? repo.description.slice(0, 200) + "..." : repo.description;
+            .map((repo) => {
+              const truncatedDescription = repo.description && repo.description.length > 100 
+                ? repo.description.slice(0, 100) + "..." 
+                : repo.description;
               return \`
-          <div class="repo-card max-w-sm rounded-2xl overflow-hidden shadow-lg m-4 bg-white transition-transform transform hover:scale-105">
-            <div class="h-48 overflow-hidden flex items-center justify-center mt-4 rounded-t-2xl">
-              <img class="object-contain h-full w-full rounded-t-2xl" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}">
-            </div>
-            <div class="px-6 py-4">
-              <div class="font-bold text-xl mb-2">
-                <a href="\${repo.html_url}" class="text-blue-500">\${repo.full_name}</a>
-              </div>
-              <p class="text-gray-700 text-base">\${truncatedDescription}</p>
-            </div>
-            <div class="px-6 pt-4 pb-2">
-              <span class="inline-block bg-blue-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Stars: \${repo.stargazers_count}</span>
-            </div>
-          </div>\`;
+                <div class="repo-card w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+                  <div class="h-48 overflow-hidden flex items-center justify-center p-4">
+                    <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
+                  </div>
+                  <div class="p-4 flex-grow flex flex-col">
+                    <div class="mb-4">
+                      <h3 class="text-xl font-bold text-blue-600 truncate">
+                        \${repo.name}
+                      </h3>
+                      <p class="text-sm text-gray-600 truncate mb-2">
+                        \${repo.owner.login}
+                      </p>
+                      <p class="text-gray-700 line-clamp-3">
+                        \${truncatedDescription}
+                      </p>
+                    </div>
+                    <div class="mt-auto">
+                      <span class="inline-block bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
+                        Stars: \${repo.stargazers_count}
+                      </span>
+                    </div>
+                  </div>
+                </div>\`;
             })
             .join("");
         }
