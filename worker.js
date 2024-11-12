@@ -1,4 +1,4 @@
- addEventListener('fetch', event => {
+addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 
@@ -35,56 +35,48 @@ const html = `
         padding-left: 20px;
         padding-right: 20px;
         overflow-x: hidden;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
       }
-      #sidebar {
-        position: fixed;
-        top: 80px;
-        left: 20px;
-        bottom: 0;
-        overflow-y: auto;
-        width: 220px;
-        padding-right: 20px;
+      #language-select {
+        width: 100%;
+        max-width: 200px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
+        background-color: white;
+        margin-right: 10px;
       }
       #main-content {
-        margin-left: 240px;
-        flex-grow: 1;
-        padding-left: 20px;
+        width: 100%;
+        padding: 20px 0;
       }
-      @media (max-width: 1024px) {
-        #sidebar {
-          position: relative;
+      .repo-card {
+        width: 300px;
+        height: auto;
+        min-height: 350px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      @media (max-width: 768px) {
+        .repo-card {
           width: 100%;
-          margin-bottom: 20px;
+          max-width: 300px;
+          min-height: 300px;
         }
-        #main-content {
-          margin-left: 0;
-          padding-left: 0;
-        }
-      }
-      @media (max-width: 640px) {
-        #sidebar {
-          display: none;
-        }
-        #main-content {
-          margin-left: 0 !important;
-          padding-left: 8px;
+        .container {
+          padding-left: 10px;
+          padding-right: 10px;
         }
       }
-      #sidebar-links li {
-        margin-bottom: 12px;
+      .repo-card img {
+        height: 150px;
+        width: 100%;
+        object-fit: contain;
       }
-      #sidebar-links li a {
-        display: block;
-        padding: 8px 12px;
-        border-radius: 8px;
-        background-color: #e2e8f0;
-        transition: background-color 0.3s;
-      }
-      #sidebar-links li a:hover {
-        background-color: #cbd5e0;
+      .repo-card .description {
+        flex-grow: 1;
+        overflow-y: hidden;
       }
       .highlight {
         background-color: yellow;
@@ -96,6 +88,7 @@ const html = `
         right: 0;
         z-index: 10;
         background-color: white;
+        padding: 10px;
       }
       #back-to-top {
         position: fixed;
@@ -113,49 +106,43 @@ const html = `
       #back-to-top:hover {
         background-color: #2d3748;
       }
-      .repo-card {
-        width: 300px;
-        height: 400px;
-        overflow: hidden;
+      .search-container {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
       }
-      .repo-card img {
-        height: 150px;
-        width: 100%;
-        object-fit: contain;
+      #search {
+        width: 150px;
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid #e2e8f0;
       }
-      .repo-card .description {
-        flex-grow: 1;
-        overflow-y: hidden;
-      }
-      .repo-card .truncated-description {
-        max-height: 80px;
-        overflow: hidden;
-      }
-      .text-base {
-        flex-grow: 1;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
+      @media (max-width: 640px) {
+        .search-container {
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        #search, #language-select {
+          width: 100%;
+          max-width: none;
+          margin: 5px 0;
+        }
       }
     </style>
   </head>
   <body class="bg-gray-100">
-    <header class="sticky-header flex justify-between items-center px-4 py-2 bg-white shadow-md">
-      <h1 id="github-star-导航" class="text-2xl font-bold">
-        <a href="/" class="hidden md:block">Github Star 导航</a>
+    <header class="sticky-header flex flex-col md:flex-row justify-between items-center px-4 py-2 bg-white shadow-md">
+      <h1 class="text-xl md:text-2xl font-bold mb-2 md:mb-0">
+        <a href="/">Github Star 导航</a>
       </h1>
-      <input id="search" type="text" placeholder="搜索..." class="border rounded-lg px-4 py-2 w-64 text-lg" />
-    </header>
-    <div class="container mx-auto p-4 py-16">
-      <div id="sidebar">
-        <h2 class="text-xl font-bold mb-4">语言分类</h2>
-        <ul id="sidebar-links"></ul>
+      <div class="search-container">
+        <select id="language-select" class="text-sm md:text-base">
+          <option value="">选择语言</option>
+        </select>
+        <input id="search" type="text" placeholder="搜索..." class="text-sm md:text-base" />
       </div>
+    </header>
+    <div class="container mx-auto py-16">
       <div id="main-content">
         <div id="categories-container"></div>
       </div>
@@ -175,24 +162,24 @@ const html = `
                 ? repo.description.slice(0, 100) + "..." 
                 : repo.description;
               return \`
-                <div class="repo-card w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                  <div class="h-48 overflow-hidden flex items-center justify-center p-4">
+                <div class="repo-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col m-2">
+                  <div class="h-36 overflow-hidden flex items-center justify-center p-4">
                     <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
                   </div>
                   <div class="p-4 flex-grow flex flex-col">
                     <div class="mb-4">
-                      <h3 class="text-xl font-bold text-blue-600 truncate">
+                      <h3 class="text-lg font-bold text-blue-600 truncate">
                         \${repo.name}
                       </h3>
                       <p class="text-sm text-gray-600 truncate mb-2">
                         \${repo.owner.login}
                       </p>
-                      <p class="text-gray-700 line-clamp-3">
+                      <p class="text-sm text-gray-700 line-clamp-3">
                         \${truncatedDescription}
                       </p>
                     </div>
                     <div class="mt-auto">
-                      <span class="inline-block bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
+                      <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
                         Stars: \${repo.stargazers_count}
                       </span>
                     </div>
@@ -206,7 +193,7 @@ const html = `
           .map(
             (language) => \`
       <div id="\${language}" class="mb-8 category">
-        <h2 class="text-2xl font-bold mb-4">\${language}</h2>
+        <h2 class="text-xl font-bold mb-4">\${language}</h2>
         <div class="flex flex-wrap justify-center">
           \${repoCardsHtml(data[language])}
         </div>
@@ -214,57 +201,34 @@ const html = `
           )
           .join("");
 
-        const sidebarLinks = Object.keys(data)
-          .map(
-            (language) => \`
-      <li class="mb-2"><a href="#\${language}" class="text-blue-500 hover:underline">\${language}</a></li>\`
-          )
-          .join("");
+        const languageSelect = document.getElementById("language-select");
+        Object.keys(data).forEach(language => {
+          const option = document.createElement("option");
+          option.value = language;
+          option.textContent = language;
+          languageSelect.appendChild(option);
+        });
 
-        document.getElementById("sidebar-links").innerHTML = sidebarLinks;
         document.getElementById("categories-container").innerHTML = categoriesHtml;
       }
 
       document.addEventListener("DOMContentLoaded", async function () {
         const searchInput = document.getElementById("search");
+        const languageSelect = document.getElementById("language-select");
         const categoriesContainer = document.getElementById("categories-container");
         const backToTopButton = document.getElementById("back-to-top");
         const data = await fetchData();
         generateHTML(data);
 
-        function repoCardsHtml(repos) {
-          return repos
-            .map((repo) => {
-              const truncatedDescription = repo.description && repo.description.length > 100 
-                ? repo.description.slice(0, 100) + "..." 
-                : repo.description;
-              return \`
-                <div class="repo-card w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-                  <div class="h-48 overflow-hidden flex items-center justify-center p-4">
-                    <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
-                  </div>
-                  <div class="p-4 flex-grow flex flex-col">
-                    <div class="mb-4">
-                      <h3 class="text-xl font-bold text-blue-600 truncate">
-                        \${repo.name}
-                      </h3>
-                      <p class="text-sm text-gray-600 truncate mb-2">
-                        \${repo.owner.login}
-                      </p>
-                      <p class="text-gray-700 line-clamp-3">
-                        \${truncatedDescription}
-                      </p>
-                    </div>
-                    <div class="mt-auto">
-                      <span class="inline-block bg-blue-100 text-blue-800 text-sm px-2 py-1 rounded">
-                        Stars: \${repo.stargazers_count}
-                      </span>
-                    </div>
-                  </div>
-                </div>\`;
-            })
-            .join("");
-        }
+        languageSelect.addEventListener("change", function() {
+          const selectedLanguage = this.value;
+          if (selectedLanguage) {
+            const element = document.getElementById(selectedLanguage);
+            if (element) {
+              element.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
 
         window.addEventListener("scroll", function () {
           if (window.scrollY > 200) {
@@ -300,49 +264,48 @@ const html = `
           return text.replace(new RegExp(escapedQuery, "gi"), (match) => \`<span class="highlight">\${match}</span>\`);
         }
 
-        function highlightHtml(html, query) {
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, "text/html");
-
-          function walkNode(node) {
-            if (node.nodeType === Node.TEXT_NODE) {
-              const newNode = document.createElement("span");
-              newNode.innerHTML = highlightText(node.textContent, query);
-              node.parentNode.replaceChild(newNode, node);
-            } else if (node.nodeType === Node.ELEMENT_NODE) {
-              node.childNodes.forEach(walkNode);
-            }
-          }
-
-          walkNode(doc.body);
-          return doc.body.innerHTML;
-        }
-
         searchInput.addEventListener("input", function () {
           const query = this.value.trim();
           if (query) {
             const matchedRepos = searchRepositories(query);
-            const reposHtml = repoCardsHtml(matchedRepos);
-            const highlightedHtml = highlightHtml(reposHtml, query);
-
             categoriesContainer.innerHTML = \`
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-4">Search Results</h2>
-          <div class="flex flex-wrap justify-center">\${highlightedHtml}</div>
-        </div>
-      \`;
+              <div class="mb-8">
+                <h2 class="text-xl font-bold mb-4">搜索结果</h2>
+                <div class="flex flex-wrap justify-center">
+                  \${matchedRepos.map(repo => {
+                    const truncatedDescription = repo.description && repo.description.length > 100 
+                      ? repo.description.slice(0, 100) + "..." 
+                      : repo.description;
+                    return \`
+                      <div class="repo-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col m-2">
+                        <div class="h-36 overflow-hidden flex items-center justify-center p-4">
+                          <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
+                        </div>
+                        <div class="p-4 flex-grow flex flex-col">
+                          <div class="mb-4">
+                            <h3 class="text-lg font-bold text-blue-600 truncate">
+                              \${highlightText(repo.name, query)}
+                            </h3>
+                            <p class="text-sm text-gray-600 truncate mb-2">
+                              \${highlightText(repo.owner.login, query)}
+                            </p>
+                            <p class="text-sm text-gray-700 line-clamp-3">
+                              \${repo.description ? highlightText(truncatedDescription, query) : ''}
+                            </p>
+                          </div>
+                          <div class="mt-auto">
+                            <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                              Stars: \${repo.stargazers_count}
+                            </span>
+                          </div>
+                        </div>
+                      </div>\`
+                  }).join('')}
+                </div>
+              </div>
+            \`;
           } else {
-            const categoriesHtml = Object.keys(data)
-              .map(
-                (language) => \`
-          <div id="\${language}" class="mb-8 category">
-            <h2 class="text-2xl font-bold mb-4">\${language} Repositories</h2>
-            <div class="flex flex-wrap justify-center">\${repoCardsHtml(data[language])}</div>
-          </div>
-        \`
-              )
-              .join("");
-            categoriesContainer.innerHTML = categoriesHtml;
+            generateHTML(data);
           }
         });
       });
