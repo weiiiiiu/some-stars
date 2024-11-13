@@ -107,7 +107,16 @@ const html = `
         background-color: #2d3748;
       }
       .search-container {
-        display: flex;
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        background: white;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         align-items: center;
         gap: 10px;
       }
@@ -119,6 +128,7 @@ const html = `
       }
       @media (max-width: 640px) {
         .search-container {
+          width: 90%;
           flex-wrap: wrap;
           justify-content: center;
         }
@@ -131,15 +141,15 @@ const html = `
     </style>
   </head>
   <body class="bg-gray-100">
-    <header class="sticky-header flex flex-col md:flex-row justify-between items-center px-4 py-2 bg-white shadow-md">
-      <h1 class="text-xl md:text-2xl font-bold mb-2 md:mb-0">
+    <header class="sticky-header flex justify-between items-center px-4 py-2 bg-white shadow-md">
+      <h1 class="text-xl md:text-2xl font-bold">
         <a href="/">Github Star 导航</a>
       </h1>
-      <div class="search-container">
-        <select id="language-select" class="text-sm md:text-base">
+      <div class="flex items-center">
+        <select id="language-select" class="text-sm md:text-base mr-4">
           <option value="">选择语言</option>
         </select>
-        <input id="search" type="text" placeholder="搜索..." class="text-sm md:text-base" />
+        <input id="search" type="text" placeholder="搜索..." class="text-sm md:text-base w-40" />
       </div>
     </header>
     <div class="container mx-auto py-16">
@@ -169,10 +179,10 @@ const html = `
                   <div class="p-4 flex-grow flex flex-col">
                     <div class="mb-4">
                       <h3 class="text-lg font-bold text-blue-600 truncate">
-                        \${repo.name}
+                        <a href="https://github.com/\${repo.full_name}" target="_blank">\${repo.name}</a>
                       </h3>
                       <p class="text-sm text-gray-600 truncate mb-2">
-                        \${repo.owner.login}
+                        <a href="https://github.com/\${repo.owner.login}" target="_blank">\${repo.owner.login}</a>
                       </p>
                       <p class="text-sm text-gray-700 line-clamp-3">
                         \${truncatedDescription}
@@ -284,10 +294,10 @@ const html = `
                         <div class="p-4 flex-grow flex flex-col">
                           <div class="mb-4">
                             <h3 class="text-lg font-bold text-blue-600 truncate">
-                              \${highlightText(repo.name, query)}
+                              <a href="https://github.com/\${repo.full_name}" target="_blank">\${highlightText(repo.name, query)}</a>
                             </h3>
                             <p class="text-sm text-gray-600 truncate mb-2">
-                              \${highlightText(repo.owner.login, query)}
+                              <a href="https://github.com/\${repo.owner.login}" target="_blank">\${highlightText(repo.owner.login, query)}</a>
                             </p>
                             <p class="text-sm text-gray-700 line-clamp-3">
                               \${repo.description ? highlightText(truncatedDescription, query) : ''}
