@@ -42,8 +42,8 @@ const html = `
         max-width: 200px;
         padding: 8px;
         border-radius: 8px;
-        border: 1px solid #e2e8f0;
-        background-color: white;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        background-color: rgba(255, 255, 255, 0.7);
         margin-right: 10px;
       }
       #main-content {
@@ -58,6 +58,8 @@ const html = `
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
       }
       @media (max-width: 768px) {
         .repo-card {
@@ -80,7 +82,7 @@ const html = `
         overflow-y: hidden;
       }
       .highlight {
-        background-color: yellow;
+        background-color: rgba(255, 255, 0, 0.5);
       }
       .sticky-header {
         position: fixed;
@@ -88,14 +90,15 @@ const html = `
         left: 0;
         right: 0;
         z-index: 10;
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
         padding: 10px;
       }
       #back-to-top {
         position: fixed;
         bottom: 20px;
         right: 20px;
-        background-color: #1a202c;
+        background-color: rgba(26, 32, 44, 0.8);
         color: white;
         padding: 10px 15px;
         border-radius: 50%;
@@ -105,7 +108,7 @@ const html = `
         transition: opacity 0.3s;
       }
       #back-to-top:hover {
-        background-color: #2d3748;
+        background-color: rgba(45, 55, 72, 0.8);
       }
       .search-container {
         display: none;
@@ -114,7 +117,8 @@ const html = `
         left: 50%;
         transform: translateX(-50%);
         z-index: 100;
-        background: white;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
         padding: 15px;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -125,7 +129,8 @@ const html = `
         width: 150px;
         padding: 8px;
         border-radius: 8px;
-        border: 1px solid #e2e8f0;
+        border: 1px solid rgba(226, 232, 240, 0.8);
+        background-color: rgba(255, 255, 255, 0.7);
       }
       @media (max-width: 640px) {
         .search-container {
@@ -142,7 +147,7 @@ const html = `
     </style>
   </head>
   <body class="bg-gray-100">
-    <header class="sticky-header flex justify-between items-center px-4 py-2 bg-white shadow-md">
+    <header class="sticky-header flex justify-between items-center px-4 py-2 shadow-md">
       <h1 class="text-xl md:text-2xl font-bold">
         <a href="/">Github Star 导航</a>
       </h1>
@@ -173,7 +178,7 @@ const html = `
                 ? repo.description.slice(0, 100) + "..." 
                 : repo.description;
               return \`
-                <div class="repo-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col m-2">
+                <div class="repo-card rounded-lg shadow-md overflow-hidden flex flex-col m-2">
                   <div class="h-36 overflow-hidden flex items-center justify-center p-4">
                     <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
                   </div>
@@ -288,7 +293,7 @@ const html = `
                       ? repo.description.slice(0, 100) + "..." 
                       : repo.description;
                     return \`
-                      <div class="repo-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col m-2">
+                      <div class="repo-card rounded-lg shadow-md overflow-hidden flex flex-col m-2">
                         <div class="h-36 overflow-hidden flex items-center justify-center p-4">
                           <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
                         </div>
