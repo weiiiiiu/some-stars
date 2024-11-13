@@ -27,6 +27,7 @@ const html = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Star 导航</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/alist.css" rel="stylesheet" type="text/css">  
     <style>
       .container {
         margin-left: auto;
