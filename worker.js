@@ -1,41 +1,43 @@
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
+(() => {
+  var __defProp = Object.defineProperty;
+  var __name = (target, value) => __defProp(target, "name", { value, configurable: true });
 
-async function handleRequest(request) {
-  const url = new URL(request.url)
-  
-  if (url.pathname === '/data.json') {
-    return await fetchData()
-  }
-
-  return new Response(html, {
-    headers: { 'Content-Type': 'text/html' },
-  })
-}
-
-async function fetchData() {
-  try {
-    const response = await fetch('https://raw.githubusercontent.com/weiiiiiu/some-stars/main/data.json')
-    if (!response.ok) {
-      throw new Error('Failed to fetch data')
+  // worker.js
+  addEventListener("fetch", (event) => {
+    event.respondWith(handleRequest(event.request));
+  });
+  async function handleRequest(request) {
+    const url = new URL(request.url);
+    if (url.pathname === "/data.json") {
+      return await fetchData();
     }
-    return response
-  } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' }
-    })
+    return new Response(html, {
+      headers: { "Content-Type": "text/html" }
+    });
   }
-}
-
-const html = `
+  __name(handleRequest, "handleRequest");
+  async function fetchData() {
+    try {
+      const response = await fetch("https://raw.githubusercontent.com/weiiiiiu/some-stars/main/data.json");
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return response;
+    } catch (error) {
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
+  }
+  __name(fetchData, "fetchData");
+  var html = `
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Github Star 导航</title>
+    <title>Github Star \u5BFC\u822A</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/gh/weiiiiiu/Better_Alist@main/alist.css" rel="stylesheet" type="text/css">
     <style>
@@ -74,7 +76,7 @@ const html = `
       .repo-details-modal-content { background: white; border-radius: 20px; max-width: 600px; width: 90%; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); position: relative; }
       .repo-details-modal-close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px; color: #718096; }
     </style>
-    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/jq.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/jq.js"><\/script>
   </head>
   <body class="bg-gray-100">
     <div class="st-Container">
@@ -86,13 +88,13 @@ const html = `
     </div>
     <header class="sticky-header flex justify-between items-center px-4 py-2 shadow-md">
       <h1 class="text-xl md:text-2xl font-bold">
-        <a href="/">Github Star 导航</a>
+        <a href="/">Github Star \u5BFC\u822A</a>
       </h1>
       <div class="flex items-center">
         <select id="language-select" class="text-sm md:text-base mr-4">
-          <option value="">选择语言</option>
+          <option value="">\u9009\u62E9\u8BED\u8A00</option>
         </select>
-        <input id="search" type="text" placeholder="搜索..." class="text-sm md:text-base w-40" />
+        <input id="search" type="text" placeholder="\u641C\u7D22..." class="text-sm md:text-base w-40" />
       </div>
     </header>
     <div class="container mx-auto py-16">
@@ -122,12 +124,12 @@ const html = `
       function generateHTML(data) {
         const repoCardsHtml = (repos) => repos
           .map((repo) => {
-            const truncatedDescription = repo.description && repo.description.length > 100 
-              ? repo.description.slice(0, 100) + "..." 
+            const truncatedDescription = repo.description && repo.description.length > 50 
+              ? repo.description.slice(0, 50) + "..." 
               : repo.description;
             return \`
               <div class="repo-card shadow-md overflow-hidden flex m-2" data-repo='\${JSON.stringify(repo)}'>
-                <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image"> <!-- Image on top -->
+                <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image" style="background-color: rgba(255, 255, 255, 0.8);"> <!-- Image on top -->
                 <div class="p-4 flex-grow flex flex-col">
                   <div class="mb-4">
                     <h3 class="text-lg font-bold text-blue-600 truncate">
@@ -179,21 +181,22 @@ const html = `
         const data = await fetchData();
         generateHTML(data);
 
-        // 添加卡片点击事件
+        // \u6DFB\u52A0\u5361\u7247\u70B9\u51FB\u4E8B\u4EF6
         categoriesContainer.addEventListener('click', function(event) {
           const repoCard = event.target.closest('.repo-card');
           if (repoCard) {
             const repoData = JSON.parse(repoCard.dataset.repo);
             repoDetailsContent.innerHTML = \`
               <div class="text-center">
+                <img src="\${repoData.owner.avatar_url}" alt="\${repoData.owner.login}" class="mx-auto mb-4" style="width: 100px; height: 100px; object-fit: contain; background-color: rgba(255, 255, 255, 0.8); border-radius: 10px;">
                 <h2 class="text-2xl font-bold mb-2">\${repoData.name}</h2>
                 <p class="text-gray-600 mb-4">
                   <a href="https://github.com/\${repoData.owner.login}" target="_blank">\${repoData.owner.login}</a>
                 </p>
-                <p class="text-gray-700 mb-4">\${repoData.description || '暂无描述'}</p>
+                <p class="text-gray-700 mb-4">\${repoData.description || '\u6682\u65E0\u63CF\u8FF0'}</p>
                 <div class="flex justify-center space-x-4">
                   <a href="https://github.com/\${repoData.full_name}" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                    查看仓库
+                    \u67E5\u770B\u4ED3\u5E93
                   </a>
                   <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded">
                     Stars: \${repoData.stargazers_count}
@@ -205,12 +208,12 @@ const html = `
           }
         });
 
-        // 关闭模态框
+        // \u5173\u95ED\u6A21\u6001\u6846
         repoDetailsModalClose.addEventListener('click', function() {
           repoDetailsModal.style.display = 'none';
         });
 
-        // 点击模态框外部关闭
+        // \u70B9\u51FB\u6A21\u6001\u6846\u5916\u90E8\u5173\u95ED
         repoDetailsModal.addEventListener('click', function(event) {
           if (event.target === repoDetailsModal) {
             repoDetailsModal.style.display = 'none';
@@ -251,15 +254,15 @@ const html = `
             const matchedRepos = searchRepositories(query);
             categoriesContainer.innerHTML = \`
               <div class="mb-8">
-                <h2 class="text-xl font-bold mb-4">搜索结果</h2>
+                <h2 class="text-xl font-bold mb-4">\u641C\u7D22\u7ED3\u679C</h2>
                 <div class="flex flex-wrap justify-center">
                   \${matchedRepos.map(repo => {
-                    const truncatedDescription = repo.description && repo.description.length > 100 
-                      ? repo.description.slice(0, 100) + "..." 
+                    const truncatedDescription = repo.description && repo.description.length > 50 
+                      ? repo.description.slice(0, 50) + "..." 
                       : repo.description;
                     return \`
                       <div class="repo-card shadow-md overflow-hidden flex m-2" data-repo='\${JSON.stringify(repo)}'>
-                        <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image"> <!-- Image on top -->
+                        <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image" style="background-color: rgba(255, 255, 255, 0.8);"> <!-- Image on top -->
                         <div class="p-4 flex-grow flex flex-col">
                           <div class="mb-4">
                             <h3 class="text-lg font-bold text-blue-600 truncate">
@@ -288,11 +291,13 @@ const html = `
           }
         });
       });
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/lib.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/parallax.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/app.bundle.js"></script>
-    <script src='https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/fish.js'></script>
+    <\/script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/lib.js"><\/script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/parallax.min.js"><\/script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/app.bundle.js"><\/script>
+    <script src='https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/fish.js'><\/script>
   </body>
 </html>
-`
+`;
+})();
+//# sourceMappingURL=worker.js.map
