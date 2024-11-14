@@ -37,185 +37,53 @@ const html = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Github Star 导航</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/alist.css" rel="stylesheet" type="text/css">  
+    <link href="https://cdn.jsdelivr.net/gh/weiiiiiu/Better_Alist@main/alist.css" rel="stylesheet" type="text/css">
     <style>
-      .container {
-        margin: 0 auto;
-        max-width: 1800px;
-        padding: 0 20px;
-        overflow-x: hidden;
-      }
-      #language-select {
-        width: 100%;
-        max-width: 200px;
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid rgba(226, 232, 240, 0.8);
-        background-color: rgba(255, 255, 255, 0.7);
-        margin-right: 10px;
-      }
-      #main-content {
-        width: 100%;
-        padding: 20px 0;
-      }
-      .repo-card {
-        width: 300px;
-        min-height: 350px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 20px;
-        transition: transform 0.2s, box-shadow 0.2s;
-        border: 1px solid rgba(226, 232, 240, 0.8);
-      }
+      .container { margin: 0 auto; max-width: 1800px; padding: 0 20px; overflow-x: hidden; }
+      #language-select { width: 100%; max-width: 200px; padding: 8px; border-radius: 8px; border: 1px solid rgba(226, 232, 240, 0.8); background-color: rgba(255, 255, 255, 0.7); margin-right: 10px; }
+      #main-content { width: 100%; padding: 20px 0; }
+      .repo-card { width: 250px; height: 300px; display: flex; flex-direction: column; align-items: center; background-color: rgba(255, 255, 255, 0.5); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 20px; transition: transform 0.2s, box-shadow 0.2s; border: 1px solid rgba(226, 232, 240, 0.8); cursor: pointer; }
+      .repo-card-image { width: 100%; height: 100px; object-fit: contain; background-color: rgba(255, 255, 255, 0.8); margin-bottom: 10px; border-radius: 5px; } /* Image on top */
       @media (max-width: 768px) {
-        .repo-card {
-          width: 100%;
-          max-width: 300px;
-          min-height: 300px;
-        }
+        .repo-card { width: 100%; max-width: 250px; height: 200px; }
         .container { padding: 0 10px; }
       }
-      .repo-card img {
-        height: 150px;
-        width: 100%;
-        object-fit: contain;
-      }
       .highlight { background-color: rgba(255, 255, 0, 0.5); }
-      .sticky-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 10;
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      }
-      #back-to-top {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(45deg, #2563eb, #3b82f6);
-        color: white;
-        padding: 10px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        transform: translateY(100px);
-        opacity: 0;
-        transition: all 0.3s ease;
-      }
-      #back-to-top.visible {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      #back-to-top:hover {
-        transform: translateY(-5px);
-      }
-      .search-container {
-        display: none;
-        position: fixed;
-        top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100;
-        background: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        align-items: center;
-        gap: 10px;
-      }
-      #search {
-        width: 150px;
-        padding: 8px;
-        border-radius: 8px;
-        border: 1px solid rgba(226, 232, 240, 0.8);
-        background-color: rgba(255, 255, 255, 0.7);
-        transition: all 0.3s ease;
-      }
+      .sticky-header { position: fixed; top: 0; left: 0; right: 0; z-index: 10; background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); border-bottom: 1px solid rgba(226, 232, 240, 0.8); }
+      .search-container { display: none; position: fixed; top: 80px; left: 50%; transform: translateX(-50%); z-index: 100; background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); align-items: center; gap: 10px; }
+      #search { width: 150px; padding: 8px; border-radius: 8px; border: 1px solid rgba(226, 232, 240, 0.8); background-color: rgba(255, 255, 255, 0.7); transition: all 0.3s ease; }
       @media (max-width: 640px) {
-        .search-container {
-          width: 90%;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-        #search, #language-select {
-          width: 100%;
-          max-width: none;
-          margin: 5px 0;
-        }
+        .search-container { width: 90%; flex-wrap: wrap; justify-content: center; }
+        #search, #language-select { width: 100%; max-width: none; margin: 5px 0; }
       }
-      .repo-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      }
-      #language-select:hover, #search:hover {
-        border-color: #4299e1;
-        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
-      }
-      #language-select:focus, #search:focus {
-        outline: none;
-        border-color: #4299e1;
-        box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-      }
-      .category h2 {
-        position: relative;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-        color: #1e40af;
-        font-weight: 700;
-      }
-      .category h2::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background: linear-gradient(90deg, #4299e1, #667eea);
-        border-radius: 3px;
-      }
-      header h1 a {
-        background: linear-gradient(45deg, #2563eb, #3b82f6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 700;
-      }
-      .repo-card h3 a {
-        color: #1e40af;
-        transition: color 0.2s;
-      }
+      .repo-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+      #language-select:hover, #search:hover { border-color: #4299e1; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1); }
+      #language-select:focus, #search:focus { outline: none; border-color: #4299e1; box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2); }
+      .category h2 { position:relative; padding-bottom: 0.5rem; margin-bottom: 1.5rem; color: #1e40af; font-weight: 700; }
+      .category h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: linear-gradient(90deg, #4299e1, #667eea); border-radius: 3px; }
+      header h1 a { background: linear-gradient(45deg, #2563eb, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+      .repo-card h3 a { color: #1e40af; transition: color 0.2s; }
       .repo-card h3 a:hover { color: #3b82f6; }
       .repo-card .description { color: #475569; }
-      .repo-card .text-gray-600 a {
-        color: #64748b;
-        transition: color 0.2s;
-      }
+      .repo-card .text-gray-600 a { color: #64748b; transition: color 0.2s; }
       .repo-card .text-gray-600 a:hover { color: #3b82f6; }
-      .repo-card .bg-blue-100 {
-        background-color: rgba(59, 130, 246, 0.1);
-        color: #1e40af;
-      }
+      .repo-card .bg-blue-100 { background-color: rgba(59, 130, 246, 0.1); color: #1e40af; }
       #search, #language-select { color: #334155; }
       #search::placeholder { color: #94a3b8; }
+      .repo-details-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); display: none; justify-content: center; align-items: center; z-index: 1000; }
+      .repo-details-modal-content { background: white; border-radius: 20px; max-width: 600px; width: 90%; padding: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); position: relative; }
+      .repo-details-modal-close { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 24px; color: #718096; }
     </style>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/jq.js"></script>
   </head>
   <body class="bg-gray-100">
+    <div class="st-Container">
+      <a style='display:none' class="st-Menu closed" id="st-Menu" href="javascript:void(0);"></a>
+    </div>
+    <div class="sw-Hennnyano" id="sw-Hennnyano">
+      <div class="layer body w100" data-depth="0.1"></div>
+      <div the "layer eyes w100" data-depth="0.2"></div>
+    </div>
     <header class="sticky-header flex justify-between items-center px-4 py-2 shadow-md">
       <h1 class="text-xl md:text-2xl font-bold">
         <a href="/">Github Star 导航</a>
@@ -232,7 +100,13 @@ const html = `
         <div id="categories-container"></div>
       </div>
     </div>
-    <button id="back-to-top">↑</button>
+    <div id="repo-details-modal" class="repo-details-modal">
+      <div class="repo-details-modal-content">
+        <span class="repo-details-modal-close">&times;</span>
+        <div id="repo-details-content"></div>
+      </div>
+    </div>
+    <div id="jsi-flying-fish-container" the "fish-container"></div>
     <script>
       async function fetchData() {
         try {
@@ -252,10 +126,8 @@ const html = `
               ? repo.description.slice(0, 100) + "..." 
               : repo.description;
             return \`
-              <div class="repo-card shadow-md overflow-hidden flex flex-col m-2">
-                <div class="h-36 overflow-hidden flex items-center justify-center p-4">
-                  <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
-                </div>
+              <div class="repo-card shadow-md overflow-hidden flex m-2" data-repo='\${JSON.stringify(repo)}'>
+                <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image"> <!-- Image on top -->
                 <div class="p-4 flex-grow flex flex-col">
                   <div class="mb-4">
                     <h3 class="text-lg font-bold text-blue-600 truncate">
@@ -264,7 +136,7 @@ const html = `
                     <p class="text-sm text-gray-600 truncate mb-2">
                       <a href="https://github.com/\${repo.owner.login}" target="_blank">\${repo.owner.login}</a>
                     </p>
-                    <p class="text-sm text-gray-700 line-clamp-3">\${truncatedDescription}</p>
+                    <p class="text-sm text-gray-700 line-clamp-2">\${truncatedDescription}</p>
                   </div>
                   <div class="mt-auto">
                     <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
@@ -301,23 +173,55 @@ const html = `
         const searchInput = document.getElementById("search");
         const languageSelect = document.getElementById("language-select");
         const categoriesContainer = document.getElementById("categories-container");
-        const backToTopButton = document.getElementById("back-to-top");
+        const repoDetailsModal = document.getElementById("repo-details-modal");
+        const repoDetailsContent = document.getElementById("repo-details-content");
+        const repoDetailsModalClose = document.querySelector(".repo-details-modal-close");
         const data = await fetchData();
         generateHTML(data);
+
+        // 添加卡片点击事件
+        categoriesContainer.addEventListener('click', function(event) {
+          const repoCard = event.target.closest('.repo-card');
+          if (repoCard) {
+            const repoData = JSON.parse(repoCard.dataset.repo);
+            repoDetailsContent.innerHTML = \`
+              <div class="text-center">
+                <h2 class="text-2xl font-bold mb-2">\${repoData.name}</h2>
+                <p class="text-gray-600 mb-4">
+                  <a href="https://github.com/\${repoData.owner.login}" target="_blank">\${repoData.owner.login}</a>
+                </p>
+                <p class="text-gray-700 mb-4">\${repoData.description || '暂无描述'}</p>
+                <div class="flex justify-center space-x-4">
+                  <a href="https://github.com/\${repoData.full_name}" target="_blank" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    查看仓库
+                  </a>
+                  <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded">
+                    Stars: \${repoData.stargazers_count}
+                  </span>
+                </div>
+              </div>
+            \`;
+            repoDetailsModal.style.display = 'flex';
+          }
+        });
+
+        // 关闭模态框
+        repoDetailsModalClose.addEventListener('click', function() {
+          repoDetailsModal.style.display = 'none';
+        });
+
+        // 点击模态框外部关闭
+        repoDetailsModal.addEventListener('click', function(event) {
+          if (event.target === repoDetailsModal) {
+            repoDetailsModal.style.display = 'none';
+          }
+        });
 
         languageSelect.addEventListener("change", function() {
           const selectedLanguage = this.value;
           if (selectedLanguage) {
             document.getElementById(selectedLanguage)?.scrollIntoView({ behavior: "smooth" });
           }
-        });
-
-        window.addEventListener("scroll", () => {
-          backToTopButton.classList.toggle('visible', window.scrollY > 200);
-        });
-
-        backToTopButton.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
         });
 
         function searchRepositories(query) {
@@ -354,10 +258,8 @@ const html = `
                       ? repo.description.slice(0, 100) + "..." 
                       : repo.description;
                     return \`
-                      <div class="repo-card shadow-md overflow-hidden flex flex-col m-2">
-                        <div class="h-36 overflow-hidden flex items-center justify-center p-4">
-                          <img class="object-contain h-full w-full" src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" />
-                        </div>
+                      <div class="repo-card shadow-md overflow-hidden flex m-2" data-repo='\${JSON.stringify(repo)}'>
+                        <img src="\${repo.owner.avatar_url}" alt="\${repo.owner.login}" class="repo-card-image"> <!-- Image on top -->
                         <div class="p-4 flex-grow flex flex-col">
                           <div class="mb-4">
                             <h3 class="text-lg font-bold text-blue-600 truncate">
@@ -366,7 +268,7 @@ const html = `
                             <p class="text-sm text-gray-600 truncate mb-2">
                               <a href="https://github.com/\${repo.owner.login}" target="_blank">\${highlightText(repo.owner.login, query)}</a>
                             </p>
-                            <p class="text-sm text-gray-700 line-clamp-3">
+                            <p class="text-sm text-gray-700 line-clamp-2">
                               \${repo.description ? highlightText(truncatedDescription, query) : ''}
                             </p>
                           </div>
@@ -387,6 +289,10 @@ const html = `
         });
       });
     </script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/lib.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/js/app.bundle.js"></script>
+    <script src='https://cdn.jsdelivr.net/gh/TheSmallHanCat/Better_Alist@main/fish.js'></script>
   </body>
 </html>
 `
