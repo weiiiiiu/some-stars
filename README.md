@@ -8,6 +8,7 @@
 
 ## Table of Contents
 
+*   [Java](#java)
 *   [Dockerfile](#dockerfile)
 *   [HTML](#html)
 *   [Python](#python)
@@ -20,7 +21,6 @@
 *   [Dart](#dart)
 *   [Swift](#swift)
 *   [C#](#c)
-*   [Java](#java)
 *   [MATLAB](#matlab)
 *   [Kotlin](#kotlin)
 *   [Batchfile](#batchfile)
@@ -33,6 +33,20 @@
 *   [CSS](#css)
 *   [VHDL](#vhdl)
 
+## Java
+
+*   [mmmlllnnn/com.mln.momoxposed](https://github.com/mmmlllnnn/com.mln.momoxposed) - 墨墨背单词修改单词上限\_墨墨Xposed
+
+*   [std-microblock/TGStickerProvider](https://github.com/std-microblock/TGStickerProvider) - A Xposed/LSPosed plugin to dump stickers from Telegram. Almost all 3rd-party telegram clients are supported.
+
+*   [misterchaos/HotelSystem](https://github.com/misterchaos/HotelSystem) - :hotel:TopView工作室一轮考核项目：一个酒店管理系统，提供查看房间，对房间进行模糊查询，预订房间，个人信息管理，房间和酒店信息管理(管理员)等功能，后台使用Java,tomcat,mysql,servlet,jsp实现，没有使用任何框架
+
+*   [cinit/QAuxiliary](https://github.com/cinit/QAuxiliary) - QNotified phoenix - To make OICQ great again
+
+*   [krahets/LeetCode-Book](https://github.com/krahets/LeetCode-Book) - 《剑指 Offer》 Python, Java, C++ 解题代码，LeetBook《图解算法数据结构》配套代码仓
+
+*   [constanline/XQuickEnergy](https://github.com/constanline/XQuickEnergy) -
+
 ## Dockerfile
 
 *   [Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook) - 程序员在家做饭方法指南。Programmer's guide about how to cook at home (Simplified Chinese only).
@@ -44,6 +58,8 @@
 *   [f/awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) - This repo includes ChatGPT prompt curation to use ChatGPT better.
 
 *   [yk47g/gitkraken-chinese](https://github.com/yk47g/gitkraken-chinese) - GitKraken的中文汉化补丁
+
+*   [windwang/tvbox](https://github.com/windwang/tvbox) - 猫影视TV
 
 ## Python
 
@@ -98,8 +114,6 @@
 *   [getcursor/cursor](https://github.com/getcursor/cursor) - The AI Code Editor
 
 *   [Xposed-Modules-Repo/com.close.hook.ads](https://github.com/Xposed-Modules-Repo/com.close.hook.ads) - AdClose
-
-*   [windwang/tvbox](https://github.com/windwang/tvbox) - 猫影视TV
 
 *   [practical-tutorials/project-based-learning](https://github.com/practical-tutorials/project-based-learning) - Curated list of project-based tutorials
 
@@ -169,7 +183,7 @@
 
 *   [nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) - Revive unavailable songs for Netease Cloud Music
 
-*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - Cloudflare-workers/pages代理脚本【Vless与Trojan】，支持reality协议一键自制proxyip（IPV4、IPV6、域名三形式），推荐CF优选官方IP三地区脚本，自动输出美、亚、欧最优IP
+*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - Cloudflare-workers/pages代理脚本【Vless与Trojan】，全网首发reality协议一键自建proxyip与CF反代IP，推荐CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
 
 *   [mrabit/aliyundriveDailyCheck](https://github.com/mrabit/aliyundriveDailyCheck) - 阿里云盘每日签到脚本 青龙面板支持
 
@@ -193,15 +207,13 @@
 
 *   [molihuan/HLVideoNote](https://github.com/molihuan/HLVideoNote) - "视频笔记"顾名思义，但不仅仅是视频笔记。"Video notes" are just as the name suggests, but they are more than just video notes.
 
-*   [hiddify/hiddify-app](https://github.com/hiddify/hiddify-app) - Multi-platform auto-proxy client, supporting Sing-box, X-ray, TUIC, Hysteria, Reality, Trojan, SSH etc. It’s an open-source, secure and ad-free.
-
 ## Swift
 
 *   [Caldis/Mos](https://github.com/Caldis/Mos) - 一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板  |  A lightweight tool used to smooth scrolling and set scroll direction independently for your mouse on macOS
 
 ## C\#
 
-*   [2dust/v2rayN](https://github.com/2dust/v2rayN) - A GUI client for Windows and Linux, support Xray core and v2fly core and others
+*   [2dust/v2rayN](https://github.com/2dust/v2rayN) - A GUI client for Windows and Linux, support Xray core and others
 
 *   [Jeric-X/SyncClipboard](https://github.com/Jeric-X/SyncClipboard) - 跨平台剪贴板同步方案 / Cross-Platform Cipboard Syncing Solution
 
@@ -210,18 +222,6 @@
 *   [files-community/Files](https://github.com/files-community/Files) - A modern file manager that helps users organize their files and folders.
 
 *   [indiff/qttabbar](https://github.com/indiff/qttabbar) - QTTabBar is a small tool that allows you to use tab multi label function in Windows Explorer.   https://www.yuque.com/indiff/qttabbar
-
-## Java
-
-*   [std-microblock/TGStickerProvider](https://github.com/std-microblock/TGStickerProvider) - A Xposed/LSPosed plugin to dump stickers from Telegram. Almost all 3rd-party telegram clients are supported.
-
-*   [misterchaos/HotelSystem](https://github.com/misterchaos/HotelSystem) - :hotel:TopView工作室一轮考核项目：一个酒店管理系统，提供查看房间，对房间进行模糊查询，预订房间，个人信息管理，房间和酒店信息管理(管理员)等功能，后台使用Java,tomcat,mysql,servlet,jsp实现，没有使用任何框架
-
-*   [cinit/QAuxiliary](https://github.com/cinit/QAuxiliary) - QNotified phoenix - To make OICQ great again
-
-*   [krahets/LeetCode-Book](https://github.com/krahets/LeetCode-Book) - 《剑指 Offer》 Python, Java, C++ 解题代码，LeetBook《图解算法数据结构》配套代码仓
-
-*   [constanline/XQuickEnergy](https://github.com/constanline/XQuickEnergy) -
 
 ## MATLAB
 
