@@ -8,6 +8,7 @@
 
 ## Table of Contents
 
+*   [C++](#c)
 *   [Kotlin](#kotlin)
 *   [Java](#java)
 *   [Dockerfile](#dockerfile)
@@ -21,17 +22,24 @@
 *   [Shell](#shell)
 *   [Dart](#dart)
 *   [Swift](#swift)
-*   [C#](#c)
+*   [C#](#c-1)
 *   [MATLAB](#matlab)
 *   [Batchfile](#batchfile)
-*   [C](#c-1)
-*   [C++](#c-2)
+*   [C](#c-2)
 *   [Rust](#rust)
 *   [Ruby](#ruby)
 *   [Jupyter Notebook](#jupyter-notebook)
 *   [Vue](#vue)
 *   [CSS](#css)
 *   [VHDL](#vhdl)
+
+## C++
+
+*   [KikoPlayProject/KikoPlay](https://github.com/KikoPlayProject/KikoPlay) - KikoPlay - NOT ONLY A Full-Featured Danmu Player  不仅仅是全功能弹幕播放器
+
+*   [zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) - 这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。
+
+*   [0voice/introduce\_c-cpp\_manual](https://github.com/0voice/introduce_c-cpp_manual) - 一个收集C/C++新手学习的入门项目，整理收纳开发者开源的小项目、工具、框架、游戏等，视频，书籍，面试题/算法题，技术文章。
 
 ## Kotlin
 
@@ -157,7 +165,7 @@
 
 *   [xxnuo/dns-benchmark](https://github.com/xxnuo/dns-benchmark) - dnspy 是一个批量 DNS 服务器基准测试工具，用于本地测量全世界的 DNS 服务器的可访问性和性能。生成可视化图表。dnspy is a bulk DNS server benchmarking tool used to measure the local accessibility and performance of DNS servers worldwide. It generates visual charts.
 
-*   [naiba/nezha](https://github.com/naiba/nezha) - :trollface: Self-hosted, lightweight server and website monitoring and O\&M tool
+*   [nezhahq/nezha](https://github.com/nezhahq/nezha) - :trollface: Self-hosted, lightweight server and website monitoring and O\&M tool
 
 *   [apernet/OpenGFW](https://github.com/apernet/OpenGFW) - OpenGFW is a flexible, easy-to-use, open source implementation of GFW (Great Firewall of China) on Linux
 
@@ -227,8 +235,6 @@
 
 *   [belav/csharpier](https://github.com/belav/csharpier) - CSharpier is an opinionated code formatter for c#.
 
-*   [files-community/Files](https://github.com/files-community/Files) - A modern file manager that helps users organize their files and folders.
-
 ## MATLAB
 
 *   [ShiArthur03/ShiArthur03](https://github.com/ShiArthur03/ShiArthur03) -
@@ -250,12 +256,6 @@
 *   [anliux/Play-With-Data-Structure](https://github.com/anliux/Play-With-Data-Structure) - 《大话数据结构》代码-c
 
 *   [JoyRiderJie/LanQiaoBei-QianRuShi](https://github.com/JoyRiderJie/LanQiaoBei-QianRuShi) - 这是一个蓝桥杯嵌入式比赛备赛仓库，该仓库提供了多届比赛的完整试卷（包括国赛、省赛和模拟赛）及其详细解析。此外，仓库还提供主板和拓展板的测试工程，帮助参赛者更好地备战比赛。也欢迎各位加入一起改进完善添加仓库中的项目！
-
-## C++
-
-*   [zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) - 这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。
-
-*   [0voice/introduce\_c-cpp\_manual](https://github.com/0voice/introduce_c-cpp_manual) - 一个收集C/C++新手学习的入门项目，整理收纳开发者开源的小项目、工具、框架、游戏等，视频，书籍，面试题/算法题，技术文章。
 
 ## Rust
 
