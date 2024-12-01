@@ -35,6 +35,8 @@
 
 ## miscellaneous
 
+*   [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) - 开源社区中最优秀的广告过滤器列表之一，实现了最优秀的广告拦截、隐私保护和流量节省。支持各种常见的网络层广告拦截工具和代理工具等。 |   Use Adblock syntax to fight against various advertising SDKs in Android applications from the network level ,  prevent them from loading.
+
 *   [cmliu/WorkerVless2sub](https://github.com/cmliu/WorkerVless2sub) - 这个是一个将 Cloudflare Workers - VLESS 搭配 自建优选域名 的 订阅生成器
 
 *   [blanboom/awesome-home-networking-cn](https://github.com/blanboom/awesome-home-networking-cn) - 家庭网络知识整理
@@ -96,8 +98,6 @@
 *   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - Cloudflare-workers/pages代理脚本【Vless与Trojan】，全网首发reality协议一键自建proxyip与CF反代IP，推荐CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
 
 *   [mrabit/aliyundriveDailyCheck](https://github.com/mrabit/aliyundriveDailyCheck) - 阿里云盘每日签到脚本 青龙面板支持
-
-*   [2hacc/TVBox](https://github.com/2hacc/TVBox) - TVBox 网络接口，更新速度快，接口访问速度快且稳定！
 
 ## Go
 
