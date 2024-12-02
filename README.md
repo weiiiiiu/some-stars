@@ -95,7 +95,7 @@
 
 *   [nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) - Revive unavailable songs for Netease Cloud Music
 
-*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - Cloudflare-workers/pages代理脚本【Vless与Trojan】，全网首发reality协议一键自建proxyip与CF反代IP，推荐CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
+*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - Cloudflare-workers/pages代理脚本【Vless与Trojan】，VPS与Serv00都支持reality协议一键自建proxyip与CF反代IP，推荐CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
 
 *   [mrabit/aliyundriveDailyCheck](https://github.com/mrabit/aliyundriveDailyCheck) - 阿里云盘每日签到脚本 青龙面板支持
 
