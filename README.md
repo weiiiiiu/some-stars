@@ -8,6 +8,7 @@
 
 ## Table of Contents
 
+*   [Dart](#dart)
 *   [Python](#python)
 *   [JavaScript](#javascript)
 *   [Elixir](#elixir)
@@ -22,7 +23,6 @@
 *   [Dockerfile](#dockerfile)
 *   [PHP](#php)
 *   [Shell](#shell)
-*   [Dart](#dart)
 *   [Swift](#swift)
 *   [MATLAB](#matlab)
 *   [Batchfile](#batchfile)
@@ -34,11 +34,17 @@
 *   [CSS](#css)
 *   [VHDL](#vhdl)
 
+## Dart
+
+*   [chen08209/FlClash](https://github.com/chen08209/FlClash) - A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.
+
+*   [molihuan/HLVideoNote](https://github.com/molihuan/HLVideoNote) - "视频笔记"顾名思义，但不仅仅是视频笔记。"Video notes" are just as the name suggests, but they are more than just video notes.
+
 ## Python
 
 *   [217heidai/adblockfilters](https://github.com/217heidai/adblockfilters) - 适用于AdGuard的去广告合并规则，每8个小时更新一次。
 
-*   [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB) - 💬 Ready-to-use RAG Chatbot. MaxKB 是一款基于大模型和 RAG 的开源知识库问答系统，广泛应用于智能客服、企业内部知识库、学术研究与教育等场景。
+*   [1Panel-dev/MaxKB](https://github.com/1Panel-dev/MaxKB) - 💬 Ready-to-use, flexible RAG Chatbot. MaxKB 是基于大模型和 RAG 的开源知识库问答系统，广泛应用于智能客服、企业内部知识库、学术研究与教育等场景。
 
 *   [BlueSkyXN/AdGuardHomeRules](https://github.com/BlueSkyXN/AdGuardHomeRules) - 高达百万级规则！由我原创&整理的 AdGuardHomeRules ADH广告拦截过滤规则！打造全网最强最全规则集
 
@@ -115,8 +121,6 @@
 *   [llaoj/gcopy](https://github.com/llaoj/gcopy) - A clipboard synchronization service for different devices that can synchronize text, screenshots, and files.
 
 *   [githubnext/monaspace](https://github.com/githubnext/monaspace) - An innovative superfamily of fonts for code
-
-*   [ChatGPTNextWeb/ChatGPT-Next-Web](https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web) - A cross-platform ChatGPT/Gemini UI (Web / PWA / Linux / Win / MacOS). 一键拥有你自己的跨平台 ChatGPT/Gemini 应用。
 
 ## C\#
 
@@ -235,10 +239,6 @@
 *   [fscarmen/sing-box](https://github.com/fscarmen/sing-box) - Sing-box 全家桶 --- 一键多协议脚本
 
 *   [leitbogioro/Tools](https://github.com/leitbogioro/Tools) - Something about tools
-
-## Dart
-
-*   [molihuan/HLVideoNote](https://github.com/molihuan/HLVideoNote) - "视频笔记"顾名思义，但不仅仅是视频笔记。"Video notes" are just as the name suggests, but they are more than just video notes.
 
 ## Swift
 
