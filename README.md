@@ -8,21 +8,21 @@
 
 ## Table of Contents
 
+*   [Go](#go)
 *   [HTML](#html)
+*   [Shell](#shell)
+*   [Dart](#dart)
 *   [Java](#java)
 *   [JavaScript](#javascript)
-*   [Dart](#dart)
 *   [Python](#python)
 *   [Elixir](#elixir)
 *   [TypeScript](#typescript)
 *   [C#](#c)
 *   [miscellaneous](#miscellaneous)
-*   [Go](#go)
 *   [C++](#c-1)
 *   [Kotlin](#kotlin)
 *   [Dockerfile](#dockerfile)
 *   [PHP](#php)
-*   [Shell](#shell)
 *   [Swift](#swift)
 *   [MATLAB](#matlab)
 *   [Batchfile](#batchfile)
@@ -30,10 +30,32 @@
 *   [Rust](#rust)
 *   [Ruby](#ruby)
 *   [Jupyter Notebook](#jupyter-notebook)
-*   [Vue](#vue)
-*   [CSS](#css)
+
+## Go
+
+*   [yuaotian/go-cursor-help](https://github.com/yuaotian/go-cursor-help) - 解决Cursor在免费订阅期间出现以下提示的问题:  Too many free trial accounts used on this machine. Please upgrade to pro. We have this limit in place to prevent abuse. Please let us know if you believe this is a mistake.
+
+*   [IrineSistiana/mosdns](https://github.com/IrineSistiana/mosdns) - 一个 DNS 转发器
+
+*   [synctv-org/synctv](https://github.com/synctv-org/synctv) - Synchronized viewing, theater, live streaming, video
+
+*   [Ackites/KillWxapkg](https://github.com/Ackites/KillWxapkg) - 自动化反编译微信小程序，小程序安全评估工具，发现小程序安全问题，自动解密，解包，可还原工程目录，支持Hook，小程序修改
+
+*   [xxnuo/dns-benchmark](https://github.com/xxnuo/dns-benchmark) - dnspy 是一个批量 DNS 服务器基准测试工具，用于本地测量全世界的 DNS 服务器的可访问性和性能。生成可视化图表。dnspy is a bulk DNS server benchmarking tool used to measure the local accessibility and performance of DNS servers worldwide. It generates visual charts.
+
+*   [nezhahq/nezha](https://github.com/nezhahq/nezha) - :trollface: Self-hosted, lightweight server and website monitoring and O\&M tool
+
+*   [apernet/OpenGFW](https://github.com/apernet/OpenGFW) - OpenGFW is a flexible, easy-to-use, open source implementation of GFW (Great Firewall of China) on Linux
+
+*   [fatedier/frp](https://github.com/fatedier/frp) - A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
+
+*   [usememos/memos](https://github.com/usememos/memos) - An open-source, lightweight note-taking solution. The pain-less way to create your meaningful notes. Your Notes, Your Way.
+
+*   [ZxwyWebSite/lx-source](https://github.com/ZxwyWebSite/lx-source) - lx-music-custom-source 洛雪音乐自定义解析源
 
 ## HTML
+
+*   [Potterli20/hosts](https://github.com/Potterli20/hosts) - 冷莫(trli)的规则唯一一个提供全球比较全的库Cold Mo (TRLI) rules is the only one to provide a global comparison of the library.
 
 *   [lingeringsound/10007](https://github.com/lingeringsound/10007) - hosts of block ads
 
@@ -44,6 +66,20 @@
 *   [DigitalPlatDev/FreeDomain](https://github.com/DigitalPlatDev/FreeDomain) - DigitalPlat FreeDomain: Free Domain For Everyone
 
 *   [yk47g/gitkraken-chinese](https://github.com/yk47g/gitkraken-chinese) - GitKraken的中文汉化补丁
+
+## Shell
+
+*   [rentianyu/Ad-set-hosts](https://github.com/rentianyu/Ad-set-hosts) - 集合多个去广告hosts并去重
+
+*   [fscarmen/sing-box](https://github.com/fscarmen/sing-box) - Sing-box 全家桶 --- 一键多协议脚本
+
+## Dart
+
+*   [guozhigq/pilipala](https://github.com/guozhigq/pilipala) - PiliPala 是使用Flutter开发的BiliBili第三方客户端，感谢使用。
+
+*   [chen08209/FlClash](https://github.com/chen08209/FlClash) - A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.
+
+*   [molihuan/HLVideoNote](https://github.com/molihuan/HLVideoNote) - "视频笔记"顾名思义，但不仅仅是视频笔记。"Video notes" are just as the name suggests, but they are more than just video notes.
 
 ## Java
 
@@ -86,14 +122,6 @@
 *   [OBKoro1/koro1FileHeader](https://github.com/OBKoro1/koro1FileHeader) - VSCode插件：自动生成，自动更新VSCode文件头部注释, 自动生成函数注释并支持提取函数参数，支持所有主流语言，文档齐全，使用简单，配置灵活方便，持续维护多年。
 
 *   [UnblockNeteaseMusic/server](https://github.com/UnblockNeteaseMusic/server) - Revive unavailable songs for Netease Cloud Music (Refactored & Enhanced version)
-
-*   [nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) - Revive unavailable songs for Netease Cloud Music
-
-## Dart
-
-*   [chen08209/FlClash](https://github.com/chen08209/FlClash) - A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.
-
-*   [molihuan/HLVideoNote](https://github.com/molihuan/HLVideoNote) - "视频笔记"顾名思义，但不仅仅是视频笔记。"Video notes" are just as the name suggests, but they are more than just video notes.
 
 ## Python
 
@@ -191,28 +219,6 @@
 
 *   [getcursor/cursor](https://github.com/getcursor/cursor) - The AI Code Editor
 
-## Go
-
-*   [IrineSistiana/mosdns](https://github.com/IrineSistiana/mosdns) - 一个 DNS 转发器
-
-*   [synctv-org/synctv](https://github.com/synctv-org/synctv) - Synchronized viewing, theater, live streaming, video
-
-*   [Ackites/KillWxapkg](https://github.com/Ackites/KillWxapkg) - 自动化反编译微信小程序，小程序安全评估工具，发现小程序安全问题，自动解密，解包，可还原工程目录，支持Hook，小程序修改
-
-*   [xxnuo/dns-benchmark](https://github.com/xxnuo/dns-benchmark) - dnspy 是一个批量 DNS 服务器基准测试工具，用于本地测量全世界的 DNS 服务器的可访问性和性能。生成可视化图表。dnspy is a bulk DNS server benchmarking tool used to measure the local accessibility and performance of DNS servers worldwide. It generates visual charts.
-
-*   [nezhahq/nezha](https://github.com/nezhahq/nezha) - :trollface: Self-hosted, lightweight server and website monitoring and O\&M tool
-
-*   [apernet/OpenGFW](https://github.com/apernet/OpenGFW) - OpenGFW is a flexible, easy-to-use, open source implementation of GFW (Great Firewall of China) on Linux
-
-*   [fatedier/frp](https://github.com/fatedier/frp) - A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.
-
-*   [usememos/memos](https://github.com/usememos/memos) - An open-source, lightweight note-taking solution. The pain-less way to create your meaningful notes. Your Notes, Your Way.
-
-*   [ZxwyWebSite/lx-source](https://github.com/ZxwyWebSite/lx-source) - lx-music-custom-source 洛雪音乐自定义解析源
-
-*   [XIU2/CloudflareSpeedTest](https://github.com/XIU2/CloudflareSpeedTest) - 🌩「自选优选 IP」测试 Cloudflare CDN 延迟和速度，获取最快 IP ！当然也支持其他 CDN / 网站 IP ~
-
 ## C++
 
 *   [KikoPlayProject/KikoPlay](https://github.com/KikoPlayProject/KikoPlay) - KikoPlay - NOT ONLY A Full-Featured Danmu Player  不仅仅是全功能弹幕播放器
@@ -236,10 +242,6 @@
 ## PHP
 
 *   [netcccyun/dnsmgr](https://github.com/netcccyun/dnsmgr) - 彩虹聚合DNS管理系统
-
-## Shell
-
-*   [fscarmen/sing-box](https://github.com/fscarmen/sing-box) - Sing-box 全家桶 --- 一键多协议脚本
 
 ## Swift
 
@@ -272,11 +274,3 @@
 ## Jupyter Notebook
 
 *   [wanZzz6/Modules-Learn](https://github.com/wanZzz6/Modules-Learn) - 学习笔记 - 码云：https://gitee.com/wanzheng\_96/Modules-Learn）
-
-## Vue
-
-*   [qier222/YesPlayMusic](https://github.com/qier222/YesPlayMusic) - 高颜值的第三方网易云播放器，支持 Windows / macOS / Linux :electron:
-
-## CSS
-
-*   [sinlatansen/typora-theme-Fugu](https://github.com/sinlatansen/typora-theme-Fugu) - 一款基于Lapis的typora主题
