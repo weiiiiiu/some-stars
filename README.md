@@ -8,6 +8,7 @@
 
 ## Table of Contents
 
+*   [Kotlin](#kotlin)
 *   [Go](#go)
 *   [HTML](#html)
 *   [Shell](#shell)
@@ -20,7 +21,6 @@
 *   [C#](#c)
 *   [miscellaneous](#miscellaneous)
 *   [C++](#c-1)
-*   [Kotlin](#kotlin)
 *   [Dockerfile](#dockerfile)
 *   [PHP](#php)
 *   [Swift](#swift)
@@ -30,6 +30,16 @@
 *   [Rust](#rust)
 *   [Ruby](#ruby)
 *   [Jupyter Notebook](#jupyter-notebook)
+
+## Kotlin
+
+*   [LibChecker/LibChecker](https://github.com/LibChecker/LibChecker) - An app to view libraries used in apps in your device.
+
+*   [GSWXXN/XMSFNotiChannel](https://github.com/GSWXXN/XMSFNotiChannel) -
+
+*   [Weverses/ModemPro](https://github.com/Weverses/ModemPro) - 一个适配于大部分MIUI13机型的基带增强型Xposed模块
+
+*   [XingC123/BackgroundOpt](https://github.com/XingC123/BackgroundOpt) - 这是一个通过调整进程oom\_score\_adj来骗过lmk从而实现保后台的模块。
 
 ## Go
 
@@ -120,8 +130,6 @@
 *   [NopeCHALLC/nopecha-extension](https://github.com/NopeCHALLC/nopecha-extension) - Automated CAPTCHA solver for your browser. Works with Selenium, Puppeteer, Playwright, and more.
 
 *   [OBKoro1/koro1FileHeader](https://github.com/OBKoro1/koro1FileHeader) - VSCode插件：自动生成，自动更新VSCode文件头部注释, 自动生成函数注释并支持提取函数参数，支持所有主流语言，文档齐全，使用简单，配置灵活方便，持续维护多年。
-
-*   [UnblockNeteaseMusic/server](https://github.com/UnblockNeteaseMusic/server) - Revive unavailable songs for Netease Cloud Music (Refactored & Enhanced version)
 
 ## Python
 
@@ -224,14 +232,6 @@
 *   [KikoPlayProject/KikoPlay](https://github.com/KikoPlayProject/KikoPlay) - KikoPlay - NOT ONLY A Full-Featured Danmu Player  不仅仅是全功能弹幕播放器
 
 *   [zhongyang219/TrafficMonitor](https://github.com/zhongyang219/TrafficMonitor) - 这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。
-
-## Kotlin
-
-*   [GSWXXN/XMSFNotiChannel](https://github.com/GSWXXN/XMSFNotiChannel) -
-
-*   [Weverses/ModemPro](https://github.com/Weverses/ModemPro) - 一个适配于大部分MIUI13机型的基带增强型Xposed模块
-
-*   [XingC123/BackgroundOpt](https://github.com/XingC123/BackgroundOpt) - 这是一个通过调整进程oom\_score\_adj来骗过lmk从而实现保后台的模块。
 
 ## Dockerfile
 
