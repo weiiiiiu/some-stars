@@ -8,13 +8,13 @@
 
 ## Table of Contents
 
+*   [JavaScript](#javascript)
 *   [Go](#go)
 *   [Python](#python)
 *   [Vue](#vue)
 *   [TypeScript](#typescript)
 *   [miscellaneous](#miscellaneous)
 *   [C](#c)
-*   [JavaScript](#javascript)
 *   [PHP](#php)
 *   [Shell](#shell)
 *   [Kotlin](#kotlin)
@@ -29,6 +29,36 @@
 *   [MATLAB](#matlab)
 *   [Batchfile](#batchfile)
 *   [Rust](#rust)
+
+## JavaScript
+
+*   [SillyTavern/SillyTavern](https://github.com/SillyTavern/SillyTavern) - LLM Frontend for Power Users.
+
+*   [fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid) - :ocean: 一款 Material Design 风格的 Hexo 主题 / An elegant Material-Design theme for Hexo
+
+*   [ccccai/heat-map](https://github.com/ccccai/heat-map) - :star2:仿照git马赛克墙实现了个JS原生小工具，支持自定义日期、支持自定义横纵坐标
+
+*   [haibbo/cf-openai-azure-proxy](https://github.com/haibbo/cf-openai-azure-proxy) - A Cloudflare worker script to proxy OpenAI‘s request to Azure OpenAI Service
+
+*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - CF-workers/pages代理脚本【Vless与Trojan】，支持一键自建proxyip与CF反代IP，CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
+
+*   [zhx47/cursor-api](https://github.com/zhx47/cursor-api) -
+
+*   [BryceWG/Blinko-Chrome-Extention](https://github.com/BryceWG/Blinko-Chrome-Extention) - AI-based Chrome web content extraction and summarization extension for Blinko. Supports one-click summarization of web pages, word selection saving, quick recording, and more, with content synchronization to the Blinko server.
+
+*   [cmliu/WorkerVless2sub](https://github.com/cmliu/WorkerVless2sub) - 自动化批量替换生成优选线路 VMess / VLESS / Trojan 节点的 优选订阅生成器
+
+*   [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) - 在原版的基础上修改了显示 VLESS 配置信息转换为订阅内容。使用该脚本，你可以方便地将 VLESS 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。
+
+*   [waitkafuka/cursor-api](https://github.com/waitkafuka/cursor-api) - OpenAI中转
+
+*   [zhengxiangqi/docsify-scroll-to-top](https://github.com/zhengxiangqi/docsify-scroll-to-top) - 基于Docsify的页面滚动回顶部的插件
+
+*   [TheSmallHanCat/Better\_Alist](https://github.com/TheSmallHanCat/Better_Alist) - Alist页面美化-让你的文件页面更加丝滑美观
+
+*   [cmliu/CF-Workers-SUB](https://github.com/cmliu/CF-Workers-SUB) - 这个是一个通过 Cloudflare Workers 搭建，将你任意节点与多个订阅汇聚成专属于你的订阅链接
+
+*   [catvod/CatVodOpen](https://github.com/catvod/CatVodOpen) - Open version of catvod.
 
 ## Go
 
@@ -138,41 +168,11 @@
 
 *   [Blankj/awesome-comment](https://github.com/Blankj/awesome-comment) - :boom: Funny comments
 
-*   [markyin0707/typora-activation](https://github.com/markyin0707/typora-activation) - Typora最新的激活破解方案，三步即激活。 😊实时更新中/👩‍🎓学生党必备，有条件支持正版的请不要点开🔞🈲️。Activate Typora
-
 ## C
 
 *   [peng-zhihui/ElectronBot](https://github.com/peng-zhihui/ElectronBot) -
 
 *   [henrypp/memreduct](https://github.com/henrypp/memreduct) - Lightweight real-time memory management application to monitor and clean system memory on your computer.
-
-## JavaScript
-
-*   [fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid) - :ocean: 一款 Material Design 风格的 Hexo 主题 / An elegant Material-Design theme for Hexo
-
-*   [ccccai/heat-map](https://github.com/ccccai/heat-map) - :star2:仿照git马赛克墙实现了个JS原生小工具，支持自定义日期、支持自定义横纵坐标
-
-*   [haibbo/cf-openai-azure-proxy](https://github.com/haibbo/cf-openai-azure-proxy) - A Cloudflare worker script to proxy OpenAI‘s request to Azure OpenAI Service
-
-*   [yonggekkk/Cloudflare\_vless\_trojan](https://github.com/yonggekkk/Cloudflare_vless_trojan) - CF-workers/pages代理脚本【Vless与Trojan】，支持一键自建proxyip与CF反代IP，CF优选官方IP三地区应用脚本，自动输出美、亚、欧最佳优选IP
-
-*   [zhx47/cursor-api](https://github.com/zhx47/cursor-api) -
-
-*   [BryceWG/Blinko-Chrome-Extention](https://github.com/BryceWG/Blinko-Chrome-Extention) - AI-based Chrome web content extraction and summarization extension for Blinko. Supports one-click summarization of web pages, word selection saving, quick recording, and more, with content synchronization to the Blinko server.
-
-*   [cmliu/WorkerVless2sub](https://github.com/cmliu/WorkerVless2sub) - 自动化批量替换生成优选线路 VMess / VLESS / Trojan 节点的 优选订阅生成器
-
-*   [cmliu/edgetunnel](https://github.com/cmliu/edgetunnel) - 在原版的基础上修改了显示 VLESS 配置信息转换为订阅内容。使用该脚本，你可以方便地将 VLESS 配置信息使用在线配置转换到 Clash 或 Singbox 等工具中。
-
-*   [waitkafuka/cursor-api](https://github.com/waitkafuka/cursor-api) - OpenAI中转
-
-*   [zhengxiangqi/docsify-scroll-to-top](https://github.com/zhengxiangqi/docsify-scroll-to-top) - 基于Docsify的页面滚动回顶部的插件
-
-*   [TheSmallHanCat/Better\_Alist](https://github.com/TheSmallHanCat/Better_Alist) - Alist页面美化-让你的文件页面更加丝滑美观
-
-*   [cmliu/CF-Workers-SUB](https://github.com/cmliu/CF-Workers-SUB) - 这个是一个通过 Cloudflare Workers 搭建，将你任意节点与多个订阅汇聚成专属于你的订阅链接
-
-*   [catvod/CatVodOpen](https://github.com/catvod/CatVodOpen) - Open version of catvod.
 
 ## PHP
 
