@@ -155,7 +155,7 @@
 
 *   [mc-yzy15/IDM\_ACTIVE\_scripts\_PAGE](https://github.com/mc-yzy15/IDM_ACTIVE_scripts_PAGE) - IDM-Activator
 
-*   [afosne/DNS-Unlock](https://github.com/afosne/DNS-Unlock) - 加速网络解析速度，解锁Netflix、hulu、disney等网页
+*   [afosne/DNS-UNLOCK](https://github.com/afosne/DNS-UNLOCK) - 加速网络解析速度，解锁Netflix、hulu、disney等网页
 
 *   [TG-Twilight/AWAvenue-Ads-Rule](https://github.com/TG-Twilight/AWAvenue-Ads-Rule) - 开源社区中最优秀的广告规则之一，适用于AdGuard (iOS/Android)/Home/DNS、AdAway、hosts、Mosdns、ClashMeta、QuantumultX等众多主流广告拦截工具/代理工具的广告规则。
 
